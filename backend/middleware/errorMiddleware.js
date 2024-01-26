@@ -1,3 +1,4 @@
+// Middleware handler function for express errors, statusCode 500 is a service error:
 const errorHandler = (err, req, res, next) => {
     const statusCode = res.statusCode ? res.statusCode : 500;
 
