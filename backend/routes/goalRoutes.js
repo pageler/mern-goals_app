@@ -1,4 +1,4 @@
-// manages the routes from the goalControllers functions:
+// Manages the route endpoints for the goalControllers functions:
 const express = require("express");
 const router = express.Router();
 const {
