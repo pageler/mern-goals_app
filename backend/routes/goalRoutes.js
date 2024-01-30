@@ -1,3 +1,4 @@
+// manages the routes from the goalControllers functions:
 const express = require("express");
 const router = express.Router();
 const {

@@ -1,9 +1,10 @@
+// Controllers folder holds CRUD functions:
 const asyncHandler = require("express-async-handler"); // Await response from DB.
-const Goal = require("../models/goalModel");
+const Goal = require("../models/goalModel"); // goalSchema for MongoDB
 
 // @description: Read goals
 // @route: GET /api/goals
-// @access: Private
+// @access: Private with authentication
 const getGoals = asyncHandler(async (req, res) => {
     const goals = await Goal.find();
 
@@ -12,7 +13,7 @@ const getGoals = asyncHandler(async (req, res) => {
 
 // @description: Create goal
 // @route: POST /api/goal
-// @access: Private
+// @access: Private with authentication
 const createGoal = asyncHandler(async (req, res) => {
     console.log(req.body); // Using Postman POST body.text with `urlencoded` middleware:
     if (!req.body.text) {
@@ -29,7 +30,7 @@ const createGoal = asyncHandler(async (req, res) => {
 
 // @description: Update goal
 // @route: PUT /api/goal/id
-// @access: Private
+// @access: Private with authentication
 const updateGoal = asyncHandler(async (req, res) => {
     const goal = await Goal.findById(req.params.id);
 
@@ -47,7 +48,7 @@ const updateGoal = asyncHandler(async (req, res) => {
 
 // @description: Delete goals
 // @route: DELETE /api/goals/id
-// @access: Private
+// @access: Private with authentication
 const deleteGoal = asyncHandler(async (req, res) => {
     const goal = await Goal.findById(req.params.id);
 

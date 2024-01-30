@@ -1,4 +1,4 @@
-// Use Mongoose to connect to the database.
+// Use Mongoose to connect to the MongoDB database:
 const mongoose = require("mongoose");
 
 const connectDB = async () => {
@@ -10,7 +10,7 @@ const connectDB = async () => {
         );
     } catch (error) {
         console.log(error);
-        process.exit(1);
+        process.exit(1); // Exit process with error message.
     }
 };
 

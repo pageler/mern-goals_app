@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: false })); // Middleware for goalControll
 
 app.use("/api/goals", require("./routes/goalRoutes"));
 
-app.use(errorHandler); // Calls the express error handler middleware function.
+app.use(errorHandler); // Calls the express errorHandler middleware function.
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server started on port ${port}`.blue));
