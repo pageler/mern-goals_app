@@ -12,6 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false })); // Middleware for goalController POST body.text.
 
 app.use("/api/goals", require("./routes/goalRoutes"));
+app.use("/api/users", require("./routes/userRoutes"));
 
 app.use(errorHandler); // Calls the express errorHandler middleware function.
 
